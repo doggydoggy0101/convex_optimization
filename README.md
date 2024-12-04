@@ -25,7 +25,7 @@ pip install
 
 ### :checkered_flag: Convex optimization preliminaries
 
-- [:book: Convex sets]() (Chapter 2)
+- [:book: Convex sets](2.%20Convex%20sets/) (Chapter 2)
 - [:book: Convex functions]() (Chapter 3)
 
 ### :video_game: Convex optimization problems
