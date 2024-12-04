@@ -59,13 +59,20 @@ We often use the relative interior instead of the topology interior. Lets first 
 > $$
 > the interior of $C$ is empty.
 
-This is weird since in common sense, the square should have nonempty interior. This is because the $x_3$ coordinate is fixed, thereby the $x_3$ plane is redundant in such case. We define the relative interior of the set $C$, denoted $\mathbf{relint}\ C$, as its interior relative to $\mathbf{aff}\ C$:
+This is weird since in common sense, the square should have nonempty interior. This is because the $x_3$ coordinate is fixed, thereby the $x_3$ plane is redundant in such case. We define the relative interior of the set $C$, denoted $\mathbf{relint}\ C$, as its interior relative to $\mathbf{aff}\ C$.
 
-$$
-\mathbf{relint}\ C=\{x\in C\mid B(x,r)\cap\mathbf{aff}\ C\subseteq C, r>0\},
-$$
+> **Example 2.2** (continue) The affine hull of $C$ is $\{x\in\mathbb{R}^3\mid x_3=0\}$ and the relative interior
+> $$
+> \mathbf{relint}\ C=\{x\in\mathbb{R}^3\mid-1<x_1<,\ 1<x_2<1,\ x_3=0\}
+> $$
+> is now nonempty.
 
+<div align="center">
+    <img src="docs/relint.png" width="400"/>
+    <p><b>Fig. 1 </b>Relative interior.</p>
+</div>
 
+Using the relative interior allows us to ignore redundant dimensions.
 
 ### Convex sets
 A set $C\subseteq\mathbb{R}^n$ is convex if for any $x_1,x_2\in C$ with $0\leq\theta\leq1$,
