@@ -33,11 +33,14 @@ $$
 We next introduce two widely known and used special subclasses of convex optimization: **least squares** and **linear programming**.
 
 ### Least squares
-Least squares is an unconstrained optimization problem with an objective which is a sum of squares of terms of the form $a_i^\top x− b_i$
+Least squares is an unconstrained optimization problem with an objective which is a sum of squares of residual terms of the form $a_i^\top x− b_i$
 
+$$ 
+\begin{align*}
+\min_xf_0(x)=\\|Ax-b\\|\_2^2=\sum_{i=1}^k(a_i^\top x-b_i)^2. 
+\end{align*}\tag{1.4}
 $$
-\min_xf_0(x)=\\|Ax-b\\|\_2^2=\sum\_{i=1}^k(a_i^\top x-b_i)^2. \tag{1.4}
-$$
+
 
 It is well-known that least squares has the closed-form solution
 
