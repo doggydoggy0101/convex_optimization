@@ -26,7 +26,7 @@ pip install
 ### :checkered_flag: Convex optimization preliminaries
 
 - [:book: Convex sets](2.%20Convex%20sets/) (Chapter 2)
-- [:book: Convex functions]() (Chapter 3)
+- [:book: Convex functions](3.%20Convex%20functions/) (Chapter 3)
 
 ### :video_game: Convex optimization problems
 
@@ -39,4 +39,8 @@ pip install
 
 ## :books: Reference
 <a id="BV04">[1]</a> 
-S. Boyd, L. Vandenberghe, Convex optimization, Cambridge university press, 2004.
+Boyd, S., & Vandenberghe, L. (2004). Convex optimization. Cambridge university press. ([preprint](https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf))
+
+[2] Boyd, S. Stanford CVX101: Convex Optimization. ([homework](https://github.com/NoamGit/CVX101-HW-with-python))
+
+[3] Zhang, S. UMN IE 8521: Optimization.

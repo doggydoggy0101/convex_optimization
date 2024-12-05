@@ -2,10 +2,10 @@
 
 **Table of Contents**
 - [:book: Convex sets](#book-convex-sets)
-  - [Convex sets](#convex-sets)
+  - [Basic sets](#basic-sets)
     - [Affine sets](#affine-sets)
     - [Relative interior](#relative-interior)
-    - [Convex sets](#convex-sets-1)
+    - [Convex sets](#convex-sets)
     - [Cones](#cones)
     - [Hyperplane and halfspaces](#hyperplane-and-halfspaces)
     - [Euclidean balls and ellipsoids](#euclidean-balls-and-ellipsoids)
@@ -25,7 +25,7 @@
   - [Dual cones](#dual-cones)
     - [Dual generalized inequalities](#dual-generalized-inequalities)
 
-## Convex sets
+## Basic sets
 
 ### Affine sets
 Suppose $x_1\neq x_2$ are two points in $\mathbb{R}^n$,
