@@ -19,6 +19,11 @@
   - [Generalized inequalities](#generalized-inequalities)
     - [Proper cones and generalized inequalities](#proper-cones-and-generalized-inequalities)
     - [Minimum and minimal elements](#minimum-and-minimal-elements)
+  - [Separating and supporting hyperplanes](#separating-and-supporting-hyperplanes)
+    - [Separating hyperplane Theorem](#separating-hyperplane-theorem)
+    - [Supporting hyperplanes](#supporting-hyperplanes)
+  - [Dual cones](#dual-cones)
+    - [Dual generalized inequalities](#dual-generalized-inequalities)
 
 ## Convex sets
 
@@ -270,7 +275,7 @@ A cone $K\subseteq\mathbb{R}^n$ is called a proper cone if
 3. $K$ is solid (nonempty interior).
 4. $K$ is pointed (contains no line).
 
-A proper cone $K$ can be used to define *generalized inequality*, such as:
+A proper cone $K$ can be used to define generalized inequality, such as:
 - partial order: $x\preceq_Ky\iff y\succeq_K x\iff y-x\in K$
 - strict partial order: $x\prec_Ky\iff y\succ_K x\iff y-x\in \mathbf{int}(K)$
 
@@ -284,12 +289,14 @@ Many properties of $\preceq_K$ are similar to $\leq$ on $\mathbb{R}$:
 - preserved under limits: $x_i\preceq_Ky_i$ for $x_i\to x,y_i\to y$ as $i\to\infty\implies x\preceq_Ky$
 
 Examples of generalized inequality ($\mathbb{R}^n_+$ and $\mathcal{S}^n_+$ are proper cones):
+
 - vector (componentwise) inequality: $K=\mathbb{R}^n_+;\ x\preceq_{\mathbb{R}^n_+}y\iff y-x\in\mathbb{R}^n_+;\ y_i>x_i,\ \forall y_i$
 - matrix inequality: $K=\mathcal{S}_+^n; x\preceq_{\mathcal{S}_+^n}y\iff y-x\in\mathcal{S}_+^n$
 
 
 ### Minimum and minimal elements
-An equality is said to be *linear ordering* if $x,y$ are comparable, i.e., either $x\leq y$ or $x\geq y$. Generalized inequalities are not in general linear ordering, i.e., we can have $x\not\preceq_Ky$ and $y\not\preceq_Kx$ at the same time. Therefore, we introduce *minimum/maximum* and *minimal/maximal* elements:
+An equality is said to be *linear ordering* if $x,y$ are comparable, i.e., either $x\leq y$ or $x\geq y$. Generalized inequalities are not in general linear ordering, i.e., we can have $x\not\preceq_Ky$ and $y\not\preceq_Kx$ at the same time. Therefore, we introduce minimum/maximum and minimal/maximal elements:
+
 - $x\in S$ is (unique) minimum if $\forall y\in S,\ x\preceq_Ky$.
 - $x\in S$ is minimal if $\forall y\in S,\ y\preceq_Kx$ only if $y=x$.
 - $x\in S$ is (unique) maximum if $\forall y\in S,\ x\succeq_Ky$.
@@ -301,7 +308,72 @@ set notations:
 
 For $K=\mathbb{R}_+$, minimal and minimum are the same. We show some examples for $K=\mathbb{R}^2_+$:
 
+<div align="center">
+    <img src="docs/min.png" width="600"/>
+    <p><b>Fig. 2 </b>Minimum and minimal.</p>
+</div>
 
 
 
+## Separating and supporting hyperplanes
 
+### Separating hyperplane Theorem
+Suppose $C$ and $D$ are nonempty disjoint convex sets, i.e., $C\cap D=\emptyset$. Then there exist $a\neq0$ and $b$ such that $a^\top x\leq b$ forall $x\in C$ and $a^\top x\geq b$ forall $x\in D$. In other words, the affine function $a^\top x−b$ is nonpositive on $C$ and nonnegative on $D$. The hyperplane $\\{x\mid a^\top x=b\\}$ is called a separating hyperplane for the sets $C$ and $D$.
+
+A separating hyperplane is called strict separation of the sets $C$ and $D$ if $a^\top x<b$ forall $x\in C$ and $a^\top x>b$ for all $x\in D$. Disjoint convex sets (even closed sets) need not be strictly separable. For example, $C=\\{(x,y)\mid x\leq0\\}$ and $D=\\{(x,y)\mid xy\geq1, x>,y>0\\}$,
+
+<div align="center">
+    <img src="docs/separate.png" width="320"/>
+    <p><b>Fig. 3 </b>Separating hyperplane.</p>
+</div>
+
+The converse of the separating hyperplane theorem is not true. For example, hyperplane $x=0$ separates $C=D=\\{0\\}$, but $C$ and $D$ are not disjoint convex sets.
+
+However, we can add various conditions such that the converse of separating hyperplane is true. For example, any two convex sets $C$ and $D$, with at least one of which is open, are disjoint if and only if there exists a separating hyperplane.
+
+### Supporting hyperplanes
+Suppose $C\subseteq\mathbb{R}^n$ and $x_0$ is a point in its boundary $\mathbf{bd}\ C$. If $a\neq0$ satisfies $a^\top x\leq a^\top x_0$ for all $x\in C$, then the hyperplane $\{x\mid a^\top x=b\}$ is called a supporting hyperplane to $C$ at point $x_0$.
+
+This is equivalent to saying that $x_0$ and $C$ is separated by the hyperplane $\\{x\mid a^\top x=a^\top x_0\\}$.
+
+**Supporting hyperplane theorem**
+For any nonempty convex set $C$ and $x_0\in\mathbf{bd}\ C$, there exists a supporting hyperplane to $C$ at $x_0$.
+
+**Converse of supporting hyperplane theorem**
+If a set is closed, has nonempty interior, and has a supporting hyperplane at every boundary point, then it is convex.
+
+
+
+## Dual cones 
+
+- cone $K=\{x\mid\theta x\in K, \theta\geq0\}$
+- dual cone $K^*=\{y\mid x^\top y\geq0,\ \forall x\in K\}$
+
+Dual cone is always convex, even when the original cone is not. Similar to dual problem is always convex, even when the primal problem is not. We list some (self-dual) examples:
+- $K=\mathbb{R}_+^n\implies K^*=\mathbb{R}_+^n$ 
+> $x^\top y\geq0,\ \forall x\succeq0\iff y\succeq0$
+- $K=\mathcal{S}^n_+=\{X\in\mathcal{S}^n\mid z^\top Xz\geq0,\ z\in\mathbb{R}^n\}\implies K^*=\{Y\mid\text{tr}(XY)\geq0,\ X\in\mathcal{S}^n\}$
+> $\text{tr}(XY)\geq0,\ \forall X\succeq0\iff Y\succeq0$
+
+Properties:
+- $K^*$ is closed and convex
+- $K_1\subseteq K_2\implies K^*_2\subseteq K^*_1$
+- $K$ has nonempty interior $\implies K^*$ is pointed
+- closure of $K$ is pointed $\implies K^*$ has nonempty interior
+- $K^{**}=\mathbf{cl}(\mathbf{conv}(K))$ (if $K$ is convex, $K^{**}=K$)
+- $K$ is a proper cone $\implies K^*$ is a proper cone, i.e., $K^{**}=K$
+
+### Dual generalized inequalities
+Since dual cones of proper cones are also proper cones, they define generalized inequalities as well.
+
+- $x\preceq_Ky\iff \lambda^\top x\leq\lambda^\top y,\ \forall \lambda\succeq_{K^*}0$
+- $x\prec_Ky\iff \lambda^\top x<\lambda^\top y,\ \forall \lambda\succeq_{K^*}0,\ \lambda\neq0$
+
+**Dual characterization of minimum** Recall that $x\in S$ is (unique) minimum if $\forall y\in S,\ x\preceq_Ky$.
+- $x\in S$ is minimum $\iff\forall\lambda\succ_{K^*}0$, $x$ is the unique minimizer of $\lambda^\top z$ over $z\in S$
+- $\forall\lambda\succ_{K^*}0$, the hyperplane $\{z\mid\lambda^\top(z-x)=0\}$ is a strict supporting hyperplane to $S$ at $x$
+
+**Dual characterization of minimal** Recall that $x\in S$ is minimal if $\forall y\in S,\ y\preceq_Kx$ only if $y=x$.
+- $\lambda\succ_{K^*}0$ and $x$ minimized $\lambda^\top z$ over $z\in S\implies x$ is minimal
+  
+> Converse is not ture, e.g., minimal but not minimizer.
