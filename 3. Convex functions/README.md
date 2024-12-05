@@ -275,7 +275,7 @@ A function $f:\mathbb{R}^n\to\mathbb{R}$ is called quasiconvex if all its sublev
 
 <div align="center">
     <img src="docs/quasiconvex.png" width="600"/>
-    <p><b>Fig. 1 </b>Conjugate function.</p>
+    <p><b>Fig. 2 </b>Quasiconvexity.</p>
 </div>
 
 We could also characterize quasiconvexity like the definition of convex function: A function $f$ is quasiconvex if $\mathbf{dom}\ f$ is convex and if for all $x,y\in\mathbf{dom}\ f$, and $\theta$ with $0\leq\theta\leq1$, we have
