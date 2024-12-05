@@ -229,17 +229,17 @@ In order to establish a set $C$ is convex, one can directly use the definition o
 
 - If $S_1,S_2$ are convex, then $S_1\cap S_2$ is convex.
 - If $S_\alpha$ are convex, $\alpha\in\mathcal{A}$, then $\bigcap_{\alpha\in\mathcal{A}}S_\alpha$ is convex.
-- A closed convex set $S$ is the intersection of all halfspaces $\mathcal{H}$ that contains it, i.e., $S=\bigcap\{\mathcal{H}\mid S\subseteq\mathcal{H\}}$.
+- A closed convex set $S$ is the intersection of all halfspaces $\mathcal{H}$ that contains it, i.e., $S=\bigcap\\{\mathcal{H}\mid S\subseteq\mathcal{H}\\}$.
 
 
 ### Affine functions
 Recall affine functions $f :\mathbb{R}^n\to\mathbb{R}^m;\ f(x)=Ax+b$, where $A\in\mathbb{R}^{m\times n}$ and $b\in\mathbb{R}^m$. $S$ is convex if and only if $f(S)$ is convex.
 
-- **scaling** If $S\subseteq\mathbb{R}^n$ is convex and $\alpha\in\mathbb{R}$, then $\alpha S=\{\alpha x\mid x\in S\}$ is convex.
-- **translation** If $S\subseteq\mathbb{R}^n$ is convex and $t\in\mathbb{R}^n$, then $S+t=\{x+t\mid x\in S\}$ is convex.
-- **projection** If $S\subseteq\mathbb{R}^m\times\mathbb{R}^n$ is convex, then $P=\{x\mid(x,y)\in S\}$ is convex.
-- **sum** If $S_1,S_2$ are convex, then $S_1+S_2=\{x+y\mid x\in S_1,y\in S_2\}$ is convex.
-- **Cartesian product** If $S_1,S_2$ are convex, then $S_1\times S_2=\{(x,y)\mid x\in S_1,y\in S_2\}$ is convex.
+- **scaling** If $S\subseteq\mathbb{R}^n$ is convex and $\alpha\in\mathbb{R}$, then $\alpha S=\\{\alpha x\mid x\in S\\}$ is convex.
+- **translation** If $S\subseteq\mathbb{R}^n$ is convex and $t\in\mathbb{R}^n$, then $S+t=\\{x+t\mid x\in S\\}$ is convex.
+- **projection** If $S\subseteq\mathbb{R}^m\times\mathbb{R}^n$ is convex, then $P=\\{x\mid(x,y)\in S\\}$ is convex.
+- **sum** If $S_1,S_2$ are convex, then $S_1+S_2=\\{x+y\mid x\in S_1,y\in S_2\\}$ is convex.
+- **Cartesian product** If $S_1,S_2$ are convex, then $S_1\times S_2=\\{(x,y)\mid x\in S_1,y\in S_2\\}$ is convex.
 
 
 ### Perspective functions
@@ -256,7 +256,11 @@ L(x)=\dfrac{Ax+b}{c^\top x+d}\ ;\ \ \mathbf{dom}\ L=\{x\in\mathbb{R}^n\mid c^\to
 \end{align*}\tag{2.13}
 $$
 
-> Suppose that $g:\mathbb{R}^n\to\mathbb{R}^{m+1}$ is affine given by $g(x)=\begin{bmatrix}A\\c^\top\end{bmatrix}x+\begin{bmatrix}b\\d\end{bmatrix}$, we can construct the linear-fractional function
+> Suppose that $g:\mathbb{R}^n\to\mathbb{R}^{m+1}$ is affine given by
+> 
+> $$g(x)=\begin{bmatrix}A\\\\c^\top\end{bmatrix}x+\begin{bmatrix}b\\\\d\end{bmatrix},$$
+>
+> we can construct the linear-fractional function
 > 
 > $$
 > f(x)=P\circ g(x)=\frac{(Ax+b)}{(c^Tx+d)}.
@@ -290,23 +294,24 @@ Many properties of $\preceq_K$ are similar to $\leq$ on $\mathbb{R}$:
 
 Examples of generalized inequality ($\mathbb{R}^n_+$ and $\mathcal{S}^n_+$ are proper cones):
 
-- vector (componentwise) inequality: $K=\mathbb{R}^n_+;\ x\preceq_{\mathbb{R}^n_+}y\iff y-x\in\mathbb{R}^n_+;\ y_i>x_i,\ \forall y_i$
-- matrix inequality: $K=\mathcal{S}_+^n; x\preceq_{\mathcal{S}_+^n}y\iff y-x\in\mathcal{S}_+^n$
+- vector (component-wise) inequality: $K=\mathbb{R}^n_+;\ x\preceq_{\mathbb{R}^n_+}y\iff y-x\in\mathbb{R}^n_+;\ y_i>x_i,\ \forall y_i$
+- matrix inequality: $K=\mathcal{S}\_+^n; x\preceq_{\mathcal{S}\_+^n}y\iff y-x\in\mathcal{S}\_+^n$
 
 
 ### Minimum and minimal elements
-An equality is said to be *linear ordering* if $x,y$ are comparable, i.e., either $x\leq y$ or $x\geq y$. Generalized inequalities are not in general linear ordering, i.e., we can have $x\not\preceq_Ky$ and $y\not\preceq_Kx$ at the same time. Therefore, we introduce minimum/maximum and minimal/maximal elements:
+An equality is said to be linear ordering if $x,y$ are comparable, i.e., either $x\leq y$ or $x\geq y$. Generalized inequalities are not in general linear ordering, i.e., we can have $x\not\preceq_Ky$ and $y\not\preceq_Kx$ at the same time. Therefore, we introduce minimum/maximum and minimal/maximal elements:
 
-- $x\in S$ is (unique) minimum if $\forall y\in S,\ x\preceq_Ky$.
-- $x\in S$ is minimal if $\forall y\in S,\ y\preceq_Kx$ only if $y=x$.
-- $x\in S$ is (unique) maximum if $\forall y\in S,\ x\succeq_Ky$.
-- $x\in S$ is maximal if $\forall y\in S,\ y\succeq_Kx$ only if $y=x$.
+- $x\in S$ is (unique) minimum if $\forall y\in S,\ x\preceq_Ky$
+- $x\in S$ is minimal if $\forall y\in S,\ y\preceq_Kx$ only if $y=x$
+- $x\in S$ is (unique) maximum if $\forall y\in S,\ x\succeq_Ky$
+- $x\in S$ is maximal if $\forall y\in S,\ y\succeq_Kx$ only if $y=x$
 
-set notations:
-- $x\in S$ is minimum if and only if $S\subseteq x+K$.
-- $x\in S$ is minimal if and only if $(x-K)\cap S=\{x\}$.
+Set notations:
 
-For $K=\mathbb{R}_+$, minimal and minimum are the same. We show some examples for $K=\mathbb{R}^2_+$:
+- $x\in S$ is minimum if and only if $S\subseteq x+K$
+- $x\in S$ is minimal if and only if $(x-K)\cap S=\\{x\\}$
+
+For $K=\mathbb{R}\_+$, minimal and minimum are the same. We show some examples for $K=\mathbb{R}^2\_+$:
 
 <div align="center">
     <img src="docs/min.png" width="600"/>
@@ -318,7 +323,7 @@ For $K=\mathbb{R}_+$, minimal and minimum are the same. We show some examples fo
 ## Separating and supporting hyperplanes
 
 ### Separating hyperplane Theorem
-Suppose $C$ and $D$ are nonempty disjoint convex sets, i.e., $C\cap D=\emptyset$. Then there exist $a\neq0$ and $b$ such that $a^\top x\leq b$ forall $x\in C$ and $a^\top x\geq b$ forall $x\in D$. In other words, the affine function $a^\top x−b$ is nonpositive on $C$ and nonnegative on $D$. The hyperplane $\\{x\mid a^\top x=b\\}$ is called a separating hyperplane for the sets $C$ and $D$.
+Suppose $C$ and $D$ are nonempty disjoint convex sets, i.e., $C\cap D=\emptyset$. Then there exist $a\neq0$ and $b$ such that $a^\top x\leq b$ for all $x\in C$ and $a^\top x\geq b$ for all $x\in D$. In other words, the affine function $a^\top x−b$ is nonpositive on $C$ and nonnegative on $D$. The hyperplane $\\{x\mid a^\top x=b\\}$ is called a separating hyperplane for the sets $C$ and $D$.
 
 A separating hyperplane is called strict separation of the sets $C$ and $D$ if $a^\top x<b$ forall $x\in C$ and $a^\top x>b$ for all $x\in D$. Disjoint convex sets (even closed sets) need not be strictly separable. For example, $C=\\{(x,y)\mid x\leq0\\}$ and $D=\\{(x,y)\mid xy\geq1, x>,y>0\\}$,
 
@@ -332,7 +337,7 @@ The converse of the separating hyperplane theorem is not true. For example, hype
 However, we can add various conditions such that the converse of separating hyperplane is true. For example, any two convex sets $C$ and $D$, with at least one of which is open, are disjoint if and only if there exists a separating hyperplane.
 
 ### Supporting hyperplanes
-Suppose $C\subseteq\mathbb{R}^n$ and $x_0$ is a point in its boundary $\mathbf{bd}\ C$. If $a\neq0$ satisfies $a^\top x\leq a^\top x_0$ for all $x\in C$, then the hyperplane $\{x\mid a^\top x=b\}$ is called a supporting hyperplane to $C$ at point $x_0$.
+Suppose $C\subseteq\mathbb{R}^n$ and $x_0$ is a point in its boundary $\mathbf{bd}\ C$. If $a\neq0$ satisfies $a^\top x\leq a^\top x_0$ for all $x\in C$, then the hyperplane $\\{x\mid a^\top x=b\\}$ is called a supporting hyperplane to $C$ at point $x_0$.
 
 This is equivalent to saying that $x_0$ and $C$ is separated by the hyperplane $\\{x\mid a^\top x=a^\top x_0\\}$.
 
@@ -346,21 +351,21 @@ If a set is closed, has nonempty interior, and has a supporting hyperplane at ev
 
 ## Dual cones 
 
-- cone $K=\{x\mid\theta x\in K, \theta\geq0\}$
-- dual cone $K^*=\{y\mid x^\top y\geq0,\ \forall x\in K\}$
+- cone $K=\\{x\mid\theta x\in K, \theta\geq0\\}$
+- dual cone $K^*=\\{y\mid x^\top y\geq0,\ \forall x\in K\\}$
 
 Dual cone is always convex, even when the original cone is not. Similar to dual problem is always convex, even when the primal problem is not. We list some (self-dual) examples:
-- $K=\mathbb{R}_+^n\implies K^*=\mathbb{R}_+^n$ 
+- $K=\mathbb{R}\_+^n\implies K^*=\mathbb{R}\_+^n$ 
 > $x^\top y\geq0,\ \forall x\succeq0\iff y\succeq0$
-- $K=\mathcal{S}^n_+=\{X\in\mathcal{S}^n\mid z^\top Xz\geq0,\ z\in\mathbb{R}^n\}\implies K^*=\{Y\mid\text{tr}(XY)\geq0,\ X\in\mathcal{S}^n\}$
+- $K=\mathcal{S}^n_+=\\{X\in\mathcal{S}^n\mid z^\top Xz\geq0,\ z\in\mathbb{R}^n\\}\implies K^*=\\{Y\mid\text{tr}(XY)\geq0,\ X\in\mathcal{S}^n\\}$
 > $\text{tr}(XY)\geq0,\ \forall X\succeq0\iff Y\succeq0$
 
 Properties:
 - $K^*$ is closed and convex
-- $K_1\subseteq K_2\implies K^*_2\subseteq K^*_1$
+- $K_1\subseteq K_2\implies K^\*_2\subseteq K^\*_1$
 - $K$ has nonempty interior $\implies K^*$ is pointed
 - closure of $K$ is pointed $\implies K^*$ has nonempty interior
-- $K^{**}=\mathbf{cl}(\mathbf{conv}(K))$ (if $K$ is convex, $K^{**}=K$)
+- $K^{\**}=\mathbf{cl}(\mathbf{conv}(K))$ (if $K$ is convex, $K^{**}=K$)
 - $K$ is a proper cone $\implies K^*$ is a proper cone, i.e., $K^{**}=K$
 
 ### Dual generalized inequalities
@@ -371,7 +376,7 @@ Since dual cones of proper cones are also proper cones, they define generalized 
 
 **Dual characterization of minimum** Recall that $x\in S$ is (unique) minimum if $\forall y\in S,\ x\preceq_Ky$.
 - $x\in S$ is minimum $\iff\forall\lambda\succ_{K^*}0$, $x$ is the unique minimizer of $\lambda^\top z$ over $z\in S$
-- $\forall\lambda\succ_{K^*}0$, the hyperplane $\{z\mid\lambda^\top(z-x)=0\}$ is a strict supporting hyperplane to $S$ at $x$
+- $\forall\lambda\succ_{K^*}0$, the hyperplane $\\{z\mid\lambda^\top(z-x)=0\\}$ is a strict supporting hyperplane to $S$ at $x$
 
 **Dual characterization of minimal** Recall that $x\in S$ is minimal if $\forall y\in S,\ y\preceq_Kx$ only if $y=x$.
 - $\lambda\succ_{K^*}0$ and $x$ minimized $\lambda^\top z$ over $z\in S\implies x$ is minimal
