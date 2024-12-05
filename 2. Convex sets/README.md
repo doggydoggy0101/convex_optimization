@@ -75,7 +75,7 @@ This is weird because in common sense, the square should have a nonempty interio
 > **Example 2.2** (continue) The affine hull of $C$ is $\\{x\in\mathbb{R}^3\mid x_3=0\\}$ and the relative interior
 > 
 > $$
-> \mathbf{relint}\ C=\\{x\in\mathbb{R}^3\mid -1 < x_1 < 1,\ -1 <x_2 <1,\ x_3=0\\}
+> \mathbf{relint}\ C=\\{x\in\mathbb{R}^3\mid -1 < x_1 < 1,\ -1 < x_2 <1,\ x_3=0\\}
 > $$
 > 
 > is now nonempty.
@@ -119,6 +119,7 @@ $$
 $$
 
 > A set $C$ is a convex cone if for any $x_1,x_2\in C$ and $\theta_1,\theta_2\geq0$,
+> 
 > $$ \theta_1x_1+\theta_2x_2\in C.$$
 
 Conic combination: 
@@ -149,13 +150,13 @@ $$
 
 where $a\in\mathbb{R}^n$, $a\neq0$, and $b\in\mathbb{R}$.
 
-> Let $(n_x,n_y,n_z)^\top$ be the normal vector, with inner product: 
+> Let $(n_x,n_y,n_z)^\top$ be the normal vector, with inner product,
 > 
 > $$
 > n_x(x-x_0)+n_y(y-y_0)+n_z(z-z_0)=0\implies a^\top x=n_xx_0+n_yy_0+n_zz_0=b.
 > $$
 
-A hyperplane divides $\mathbb{R}^n$ into two *halfspaces*:
+A hyperplane divides $\mathbb{R}^n$ into two halfspaces:
 
 $$
 \{x\mid a^\top x\geq b\}\ ;\ \ \\{x\mid a^\top x\leq b\\},\ a\in\mathbb{R}^n,\ a\neq0,\ b\in\mathbb{R}.
@@ -166,7 +167,7 @@ $$
 A (Euclidean) ball in $\mathbb{R}^n$ has the form:
 
 $$
-B(x_c,r)=\\{x\mid\|x-x_c\|_2\leq r\\}=\\{x_c+ru\mid\|u\|_2\leq1\\},
+B(x_c,r)=\\{x\mid\\|x-x_c\\|_2\leq r\\}=\\{x_c+ru\mid\\|u\\|_2\leq1\\},
 $$
 
 where $r>0$.
@@ -177,7 +178,7 @@ An ellipsoid in $\mathbb{R}^n$ has the form:
 
 $$
 \begin{align*}
-\mathcal{E}=\\{x\mid(x-x_c)^TP^{-1}(x-x_c)\leq1\\}=\\{x_c+Au\mid\|u\|_2\leq1\\}.
+\mathcal{E}=\\{x\mid(x-x_c)^\top P^{-1}(x-x_c)\leq1\\}=\\{x_c+Au\mid\\|u\\|_2\leq1\\}.
 \end{align*}\tag{2.3, 2.4}
 $$
 
@@ -189,8 +190,7 @@ A polyhedra is defined as the solution set of a finite number of linear equaliti
 
 $$
 \begin{align*}
-\mathcal{P}&=\\{x\mid \underbrace{a_j^Tx\leq b_j}_\text{inequality},j=1,\dots,m,\ \underbrace{c_j^Tx=d_j}_\text{equality},j=1,\dots,p\\}\\
-&=\\{x\mid Ax\preceq b,\ Cx=d\\},
+\mathcal{P}=\\{x\mid \underbrace{a_j^\top x\leq b_j}\_\text{inequality},j=1,\dots,m\ ;\ \ \underbrace{c_j^\top x=d_j}\_\text{equality},j=1,\dots,p\\}=\\{x\mid Ax\preceq b,\ Cx=d\\},
 \end{align*}\tag{2.5, 2.6}
 $$
 
@@ -200,8 +200,8 @@ i.e., the intersection of a finite number of halfspaces(inequality) and hyperpla
 
 | Definition                             | Notation                                                        |
 |----------------------------------------|-----------------------------------------------------------------|
-| symmetric matrix                       | $\mathcal{S}^n=\{X\in\mathbb{R}^{n\times n}\mid X=X^T\}$        |
-| symmetric positive semidefinite matrix | $\mathcal{S}^n_+=\{X\in\mathcal{S}^{n}\mid X\succeq0\}$         |
-| symmetric positive definite matrix     | $\mathcal{S}^n_{++}=\{X\in\mathbb{R}^{n\times n}\mid X\succ0\}$ |
+| symmetric matrix                       | $\mathcal{S}^n=\\{X\in\mathbb{R}^{n\times n}\mid X=X^\top\\}$        |
+| symmetric positive semidefinite matrix | $\mathcal{S}^n_+=\\{X\in\mathcal{S}^{n}\mid X\succeq0\\}$         |
+| symmetric positive definite matrix     | $\mathcal{S}^n_{++}=\\{X\in\mathcal{S}^{n}\mid X\succ0\\}$ |
 
 > $\mathcal{S}^n_+$ is a convex cone.
