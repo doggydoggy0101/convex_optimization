@@ -1,5 +1,6 @@
 # :book: Convex functions
 
+**Table of Contents**
 - [:book: Convex functions](#book-convex-functions)
   - [Basic properties](#basic-properties)
     - [Extended-value extension](#extended-value-extension)
@@ -42,7 +43,7 @@ We list some examples of convex function:
 - $f(x)=\exp(x)$
 - $f(x)=x\log(x)$
 - $f(x) = 1/x,\ x>0$
-- $f(x)=\|x\|_p=(\sum_{i=1}^n|x_i|^p)^\frac{1}{p},\ p\geq1$
+- $f(x)=\\|x\\|\_p=(\sum_{i=1}^n|x_i|^p)^\frac{1}{p},\ p\geq1$
 
 > For all $x\in\mathbf{dom}\ f,v\in\mathbb{R}^n,\ g(t)=f(x+tv)$ is convex if and only if $f(x)$ is convex.
 
@@ -74,9 +75,8 @@ $$
 >
 > $$
 > \begin{align*}
-> &f\big((1-t)x+ty\big)\leq (1-t)f(x)+tf(y)\\[8pt]
-> \implies\ &tf(y)-tf(x)\geq f\big(x+t(y-x)\big)-f(x)\\
-> \implies\ &f(y)-f(x)\geq\frac{f\big(x+t(y-x)\big)-f(x)}{t}
+> f\big((1-t)x+ty\big)\leq (1-t)f(x)+tf(y)&\implies tf(y)-tf(x)\geq f\big(x+t(y-x)\big)-f(x)\\
+> &\implies f(y)-f(x)\geq\frac{f\big(x+t(y-x)\big)-f(x)}{t}
 > \end{align*}
 > $$
 >
@@ -98,8 +98,8 @@ $$
 >
 > $$
 > \begin{align*}
-> \theta f(x) + (1-\theta) f(y)&\geq \theta\big(f(z)+f^\prime(z)(x-z)\big)+(1-\theta)\big(f(z)+f^\prime(z)(y-z)\big)\\[4pt]
-> &=f(z)+ \theta f^\prime(z)x+(1-\theta)f^\prime(z)y-\theta f^\prime(z)z-(1-\theta)f^\prime(z)z\\[4pt]
+> \theta f(x) + (1-\theta) f(y)&\geq \theta\big(f(z)+f^\prime(z)(x-z)\big)+(1-\theta)\big(f(z)+f^\prime(z)(y-z)\big)\\
+> &=f(z)+ \theta f^\prime(z)x+(1-\theta)f^\prime(z)y-\theta f^\prime(z)z-(1-\theta)f^\prime(z)z\\
 > &=f(z) + f^\prime(z)z - f^\prime(z)z =f(z)
 > \end{align*}
 > $$
@@ -117,10 +117,10 @@ $$
 We list some examples that are easy to verify convexity by second-order condition:
 
 - quadratic function: $f(x)=\frac{1}{2}x^\top Px+q^\top x+r,\ \nabla f(x)=Px+q,\ \nabla^2f(x)=P$, thus $f$ is convex if and only if $P$ is positive semidefinite.
-- least squares: $f(x)=\|Ax-b\|^2_2,\ \nabla f(x)=2\|Ax-b\|\frac{A^\top(Ax-b)}{\|Ax-b\|}=2A^\top(Ax-b),\ \nabla^2f(x)=2A^\top A$, thus least squares are always convex.
+- least squares: $f(x)=\\|Ax-b\\|^2_2,\ \nabla f(x)=2\\|Ax-b\\|\frac{A^\top(Ax-b)}{\\|Ax-b\\|}=2A^\top(Ax-b),\ \nabla^2f(x)=2A^\top A$, thus least squares are always convex.
 
 ### Sublevel sets
-The $t$-sublevel sets of a convex function $f:\mathbb{R}^n\to\mathbb{R}$ is defined as $S_t=\{x\in\mathbf{dom}\ f\mid f(x)\leq t\}$. Sublevel sets of a convex function are convex for any value $t$. 
+The $t$-sublevel sets of a convex function $f:\mathbb{R}^n\to\mathbb{R}$ is defined as $S_t=\\{x\in\mathbf{dom}\ f\mid f(x)\leq t\\}$. Sublevel sets of a convex function are convex for any value $t$. 
 
 > Sublevel sets can be used to verify quasiconvexity.
 
@@ -134,11 +134,11 @@ The graph of a function $f:\mathbb{R}^n\to\mathbb{R}$ is defined as $\\{(x,f(x))
 
 In order to establish a function $f$ is convex, one can directly use the definition of convex functions, or show that $f$ is obtained from simple convex functions by operations that preserve convexity. Here are some of the operations.
 
-- $f$ is convex$\implies\alpha f(x),\ \alpha\geq0$  is convex
-- $f_i$ are convex$\implies\sum f_i(x)$ is convex
-- $f_i$ are convex, $w_i$ are nonnegative$\implies\sum w_i f_i(x)$ is convex
+- $f$ is convex $\implies\alpha f(x),\ \alpha\geq0$  is convex
+- $f_i$ are convex $\implies\sum f_i(x)$ is convex
+- $f_i$ are convex, $w_i$ are nonnegative $\implies\sum w_i f_i(x)$ is convex
 - $f$ is convex, $g$ is affine $\implies f(g(x))$ is convex
-- $f_i$ are convex$\implies\max(f_1(x),\dots,f_n(x))$  is convex
+- $f_i$ are convex $\implies\max(f_1(x),\dots,f_n(x))$  is convex
 - $f(x,y)$ is convex, $y\in\mathcal{A}\implies\sup_{y\in\mathcal{A}}f(x,y)$ is convex
 
 
@@ -146,7 +146,7 @@ In order to establish a function $f$ is convex, one can directly use the definit
 Suppose $g:\mathbb{R}^n\to\mathbb{R}^k,\ h:\mathbb{R}^k\to\mathbb{R}$, the compostion $f=h\circ g:\mathbb{R}^n\to\mathbb{R}$ is defined by
 
 $$
-f(x)=h(g(x))\ ;\ \ \mathbf{dom}\ f=\{x\in\mathbf{dom}\ g\mid g(x)\in\mathbf{dom}\ h\}.
+f(x)=h(g(x))\ ;\ \ \mathbf{dom}\ f=\\{x\in\mathbf{dom}\ g\mid g(x)\in\mathbf{dom}\ h\\}.
 $$
 
 **scalar composition** ($k=1$)
@@ -186,7 +186,11 @@ $$
 
 is convex if $g(x)>-\infty$ for all $x$.
 
-For example, given a convex function $f(x,y)=x^\top Ax+2x^\top By+y^\top Cy$ with $\begin{pmatrix}A&B\\B^\top&C\end{pmatrix}\succeq0$ and $C\succeq0$. By setting the derivative of $f(x,y)$ with respective to $y$ to 0, we get $y=C^{-1}B^\top x$, the minimization
+For example, given a convex function $f(x,y)=x^\top Ax+2x^\top By+y^\top Cy$ with 
+
+$$\begin{pmatrix}A&B\\\\B^\top &C\end{pmatrix}\succeq0\ ;\ \ C\succeq0.$$ 
+
+By setting the derivative of $f(x,y)$ with respective to $y$ to 0, we get $y=C^{-1}B^\top x$, the minimization
 
 $$
 \begin{align*}
@@ -196,7 +200,13 @@ g(x)=\inf_{y}f(x,y)&=x^\top Ax+2x^\top B(C^{-1}B^\top x)+(C^{-1}B^\top x)^\top C
 \end{align*}
 $$
 
-By Schur complement, $C\succeq0$ and $\begin{pmatrix}A&B\\B^\top&C\end{pmatrix}\succeq0$ implies $A-BC^{-1}B^\top\succeq0$, therefore $g$ is convex.
+By Schur complement,
+
+$$
+C\succeq0,\ \begin{pmatrix}A&B\\\\B^\top&C\end{pmatrix}\succeq0 \implies A-BC^{-1}B^\top\succeq0,
+$$ 
+
+therefore $g$ is convex.
 
 
 
@@ -204,7 +214,7 @@ By Schur complement, $C\succeq0$ and $\begin{pmatrix}A&B\\B^\top&C\end{pmatrix}\
 If $f:\mathbb{R}^n\to\mathbb{R}$, then the perspective of $f$ is the function $g:\mathbb{R}^{n+1}\to\mathbb{R}$ defined by
 
 $$
-g(x,t)=tf(x/t)\ ;\ \ \mathbf{dom}\ g=\{(x,t)\mid x/t\in\mathbf{dom} f,\ t>0\}.
+g(x,t)=tf(x/t)\ ;\ \ \mathbf{dom}\ g=\\{(x,t)\mid x/t\in\mathbf{dom} f,\ t>0\\}.
 $$
 
 If $f$ is convex, then $g$ is convex. We give a short proof using epigraph and the perspective function of $\mathbb{R}^{n+1}$. For $t>0$, we have
@@ -217,21 +227,23 @@ $$
 \end{align*}
 $$
 
-Since $f$ is convex$\iff\mathbf{epi}\ f$ is convex, we have $g$ is convex$\iff\mathbf{epi}\ g$ is convex.
+Since $f$ is convex $\iff\mathbf{epi}\ f$ is convex, we have $g$ is convex $\iff\mathbf{epi}\ g$ is convex.
 
 
 
 ## Conjugate function
-Let $f:\mathbb{R}^n\to\mathbb{R}$, then $f^*:\mathbb{R}^n\to\mathbb{R}$ is the *conjugate* of $f$ defined by
+Let $f:\mathbb{R}^n\to\mathbb{R}$, then $f^*:\mathbb{R}^n\to\mathbb{R}$ is the conjugate of $f$ defined by
 
 $$
-f^*(y)=\sup_{x\in\mathbf{dom}\ f}\big(y^\top x-f(x)\big).\tag{3.18}
+\begin{align*}
+f^\*(y)=\sup_{x\in\mathbf{dom}\ f}\big(y^\top x-f(x)\big).
+\end{align*}\tag{3.18}
 $$
 
 We immediately see that $f^*$ is convex since it is the supremum of affine function of $y$, whether $f$ is convex or not. For example given an affine function $f(x)=ax+b$,
 
 $$
-f^\*(y)=\sup_{x\in\mathbb{R}}\big(yx-(ax+b)\big)=\sup_{x\in\mathbb{R}}\big((y-a)x-b\big)=\begin{cases}-b&\text{if }y=a\\\infty&\text{if }y\neq a\end{cases}
+f^\*(y)=\sup_{x\in\mathbb{R}}\big(yx-(ax+b)\big)=\sup_{x\in\mathbb{R}}\big((y-a)x-b\big)=\begin{cases}-b&\text{if }y=a,\\\\ \infty&\text{if }y\neq a.\end{cases}
 $$
 
 For 1-dimensional case, conjugate function tries to find the maximum distance between $yx$ and $f(x)$. A nice demonstration can be found here: [Fenchel conjugate function demo](https://youtu.be/zkesU2jMkCg).
@@ -249,7 +261,7 @@ $$
 
 **Conjugate of the conjugate** If $f$ is convex and closed, i.e., $\mathbf{epi}\ f$ is a closed convex set, then $f^{**}=f$, i.e., the conjugate of conjugate of $f$ is $f$ itself.
 
-**Differetiable functions** If $f$ is differentiable, then the conjugate of $f$ is also called the Legendre transform of $f$. Suppose $f$ is convex and differetiable, the maximizer $x^*$ must satisfy the first-order condition. Take the derivatives if $y^\top x^*-f(x^*)$ to zero, we get $y=\nabla f(x^*)$. Therefore, if $y=\nabla f(x)$, we have a closed-form to compute the conjugate function
+**Differetiable functions** If $f$ is differentiable, then the conjugate of $f$ is also called the Legendre transform of $f$. Suppose $f$ is convex and differetiable, the maximizer $x^\*$ must satisfy the first-order condition. Take the derivatives if $y^\top x^\*-f(x^\*)$ to zero, we get $y=\nabla f(x^*)$. Therefore, if $y=\nabla f(x)$, we have a closed-form to compute the conjugate function
 
 $$
 f^*(y)=\nabla f(x)^\top x-f(x).
@@ -270,11 +282,11 @@ We could also characterize quasiconvexity like the definition of convex function
 
 $$
 \begin{align*}
-f(\theta x+(1-\theta)y)\leq\max\{f(x),f(y)\}.
+f(\theta x+(1-\theta)y)\leq\max\\{f(x),f(y)\\}.
 \end{align*}\tag{3.19}
 $$
 
-> Points between the line segmant cannot be larger than the $\max\{f(x),f(y)\}$-level.
+> Points between the line segmant cannot be larger than the $\max\\{f(x),f(y)\\}$-level.
 
 
 ### Differentiable quasiconvex functions
@@ -296,9 +308,9 @@ $$
 
 ### Operations that preserve quasiconvexity
 
-- $f_i$ are quasiconvex$\implies\max(f_1(x),\dots f_k(x))$ is quasiconvex
-- $f_i$ are quasiconvex,  $w_i$ are nonnegative$\implies\max(w_1f_1(x),\dots w_kf_k(x))$ is quasiconvex
-- $g:\mathbb{R}^n\to\mathbb{R}$ is quasiconvex, $h:\mathbb{R}\to\mathbb{R}$ is nondecreasing$\implies f=h\circ g$ is quasiconvex
+- $f_i$ are quasiconvex $\implies\max(f_1(x),\dots f_k(x))$ is quasiconvex
+- $f_i$ are quasiconvex,  $w_i$ are nonnegative $\implies\max(w_1f_1(x),\dots w_kf_k(x))$ is quasiconvex
+- $g:\mathbb{R}^n\to\mathbb{R}$ is quasiconvex, $h:\mathbb{R}\to\mathbb{R}$ is nondecreasing $\implies f=h\circ g$ is quasiconvex
 - $f$ is quasiconvex, $y\in C\implies g(x)=\inf_{y\in C}f(x,y)$ is quasiconvex
 - sum of quasiconvex functions is not necessary quasiconvex
 
