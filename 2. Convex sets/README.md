@@ -11,6 +11,14 @@
     - [Euclidean balls and ellipsoids](#euclidean-balls-and-ellipsoids)
     - [Polyhedra](#polyhedra)
     - [The positive semidefinite cone](#the-positive-semidefinite-cone)
+  - [Operations preserving convexity](#operations-preserving-convexity)
+    - [Intersection](#intersection)
+    - [Affine functions](#affine-functions)
+    - [Perspective functions](#perspective-functions)
+    - [Linear-fractional](#linear-fractional)
+  - [Generalized inequalities](#generalized-inequalities)
+    - [Proper cones and generalized inequalities](#proper-cones-and-generalized-inequalities)
+    - [Minimum and minimal elements](#minimum-and-minimal-elements)
 
 ## Convex sets
 
@@ -205,3 +213,95 @@ i.e., the intersection of a finite number of halfspaces(inequality) and hyperpla
 | symmetric positive definite matrix     | $\mathcal{S}^n_{++}=\\{X\in\mathcal{S}^{n}\mid X\succ0\\}$ |
 
 > $\mathcal{S}^n_+$ is a convex cone.
+
+
+
+## Operations preserving convexity
+
+In order to establish a set $C$ is convex, one can directly use the definition of convex sets, or show that $C$ is obtained from simple convex sets by operations that preserve convexity. Here are some of the operations.
+
+### Intersection
+
+- If $S_1,S_2$ are convex, then $S_1\cap S_2$ is convex.
+- If $S_\alpha$ are convex, $\alpha\in\mathcal{A}$, then $\bigcap_{\alpha\in\mathcal{A}}S_\alpha$ is convex.
+- A closed convex set $S$ is the intersection of all halfspaces $\mathcal{H}$ that contains it, i.e., $S=\bigcap\{\mathcal{H}\mid S\subseteq\mathcal{H\}}$.
+
+
+### Affine functions
+Recall affine functions $f :\mathbb{R}^n\to\mathbb{R}^m;\ f(x)=Ax+b$, where $A\in\mathbb{R}^{m\times n}$ and $b\in\mathbb{R}^m$. $S$ is convex if and only if $f(S)$ is convex.
+
+- **scaling** If $S\subseteq\mathbb{R}^n$ is convex and $\alpha\in\mathbb{R}$, then $\alpha S=\{\alpha x\mid x\in S\}$ is convex.
+- **translation** If $S\subseteq\mathbb{R}^n$ is convex and $t\in\mathbb{R}^n$, then $S+t=\{x+t\mid x\in S\}$ is convex.
+- **projection** If $S\subseteq\mathbb{R}^m\times\mathbb{R}^n$ is convex, then $P=\{x\mid(x,y)\in S\}$ is convex.
+- **sum** If $S_1,S_2$ are convex, then $S_1+S_2=\{x+y\mid x\in S_1,y\in S_2\}$ is convex.
+- **Cartesian product** If $S_1,S_2$ are convex, then $S_1\times S_2=\{(x,y)\mid x\in S_1,y\in S_2\}$ is convex.
+
+
+### Perspective functions
+A perspective function is defined as $P:\mathbb{R}^{n+1}\to\mathbb{R}^n$ with $\mathbf{dom}\ P=\mathbb{R}^n\times\mathbb{R}_{++}$ as $P(z,t)=z/t$. 
+
+The perspective function normalizes the vector along the last component (e.g., transforming camera coordinate to pixel coordinate). $S$ is convex if and only if $P(S)$ is convex.
+
+### Linear-fractional
+A linear-fractional function is defined as $L:\mathbb{R}^n\to\mathbb{R}^m$, where
+
+$$
+\begin{align*}
+L(x)=\dfrac{Ax+b}{c^\top x+d}\ ;\ \ \mathbf{dom}\ L=\{x\in\mathbb{R}^n\mid c^\top x+d>0\}.
+\end{align*}\tag{2.13}
+$$
+
+> Suppose that $g:\mathbb{R}^n\to\mathbb{R}^{m+1}$ is affine given by $g(x)=\begin{bmatrix}A\\c^\top\end{bmatrix}x+\begin{bmatrix}b\\d\end{bmatrix}$, we can construct the linear-fractional function
+> 
+> $$
+> f(x)=P\circ g(x)=\frac{(Ax+b)}{(c^Tx+d)}.
+> $$
+
+The linear-fractional (projective) function is formed by composing the perspective function with an affine function. $S$ is convex if and only if $L(S)$ is convex.
+
+
+
+## Generalized inequalities
+
+### Proper cones and generalized inequalities
+A cone $K\subseteq\mathbb{R}^n$ is called a proper cone if 
+1. $K$ is convex.
+2. $K$ is closed.
+3. $K$ is solid (nonempty interior).
+4. $K$ is pointed (contains no line).
+
+A proper cone $K$ can be used to define *generalized inequality*, such as:
+- partial order: $x\preceq_Ky\iff y\succeq_K x\iff y-x\in K$
+- strict partial order: $x\prec_Ky\iff y\succ_K x\iff y-x\in \mathbf{int}(K)$
+
+Many properties of $\preceq_K$ are similar to $\leq$ on $\mathbb{R}$:
+
+- preserved under addition: $x\preceq_Ky$ and $u\preceq_Kv\implies x+u\preceq_Ky+v$
+- transitive: $x\preceq_Ky$ and $y\preceq_Kz\implies x\preceq_Kz$
+- preserved under nonnegative scalar: $x\preceq_Ky$ and $\alpha\geq0\implies\alpha x\preceq_K\alpha y$
+- reflexive: $x\preceq_Kx$
+- antisymmetric: $x\preceq_Ky$ and $y\preceq_Kx\implies x=y$
+- preserved under limits: $x_i\preceq_Ky_i$ for $x_i\to x,y_i\to y$ as $i\to\infty\implies x\preceq_Ky$
+
+Examples of generalized inequality ($\mathbb{R}^n_+$ and $\mathcal{S}^n_+$ are proper cones):
+- vector (componentwise) inequality: $K=\mathbb{R}^n_+;\ x\preceq_{\mathbb{R}^n_+}y\iff y-x\in\mathbb{R}^n_+;\ y_i>x_i,\ \forall y_i$
+- matrix inequality: $K=\mathcal{S}_+^n; x\preceq_{\mathcal{S}_+^n}y\iff y-x\in\mathcal{S}_+^n$
+
+
+### Minimum and minimal elements
+An equality is said to be *linear ordering* if $x,y$ are comparable, i.e., either $x\leq y$ or $x\geq y$. Generalized inequalities are not in general linear ordering, i.e., we can have $x\not\preceq_Ky$ and $y\not\preceq_Kx$ at the same time. Therefore, we introduce *minimum/maximum* and *minimal/maximal* elements:
+- $x\in S$ is (unique) minimum if $\forall y\in S,\ x\preceq_Ky$.
+- $x\in S$ is minimal if $\forall y\in S,\ y\preceq_Kx$ only if $y=x$.
+- $x\in S$ is (unique) maximum if $\forall y\in S,\ x\succeq_Ky$.
+- $x\in S$ is maximal if $\forall y\in S,\ y\succeq_Kx$ only if $y=x$.
+
+set notations:
+- $x\in S$ is minimum if and only if $S\subseteq x+K$.
+- $x\in S$ is minimal if and only if $(x-K)\cap S=\{x\}$.
+
+For $K=\mathbb{R}_+$, minimal and minimum are the same. We show some examples for $K=\mathbb{R}^2_+$:
+
+
+
+
+
