@@ -1,11 +1,18 @@
-## :book: Convex sets
+# :book: Convex sets
 
 **Table of Contents**
 - [:book: Convex sets](#book-convex-sets)
-  - [Affine sets](#affine-sets)
-  - [Relative interior](#relative-interior)
   - [Convex sets](#convex-sets)
+    - [Affine sets](#affine-sets)
+    - [Relative interior](#relative-interior)
+    - [Convex sets](#convex-sets-1)
+    - [Cones](#cones)
+    - [Hyperplane and halfspaces](#hyperplane-and-halfspaces)
+    - [Euclidean balls and ellipsoids](#euclidean-balls-and-ellipsoids)
+    - [Polyhedra](#polyhedra)
+    - [The positive semidefinite cone](#the-positive-semidefinite-cone)
 
+## Convex sets
 
 ### Affine sets
 Suppose $x_1\neq x_2$ are two points in $\mathbb{R}^n$,
@@ -63,7 +70,7 @@ We often use the relative interior instead of the topology interior. Lets first 
 > 
 > the interior of $C$ is empty.
 
-This is weird since in common sense, the square should have nonempty interior. This is because the $x_3$ coordinate is fixed, thereby the $x_3$ plane is redundant in such case. We define the relative interior of the set $C$, denoted $\mathbf{relint}\ C$, as its interior relative to $\mathbf{aff}\ C$.
+This is weird because in common sense, the square should have a nonempty interior. This is because the $x_3$ coordinate is fixed, thereby the $x_3$ plane is redundant in such case. We define the relative interior of the set $C$, denoted $\mathbf{relint}\ C$, as its interior relative to $\mathbf{aff}\ C$.
 
 > **Example 2.2** (continue) The affine hull of $C$ is $\\{x\in\mathbb{R}^3\mid x_3=0\\}$ and the relative interior
 > 
@@ -104,4 +111,97 @@ $$
 > Convex hull is the smallest convex set that contains $C$.
 
 
+### Cones
+A set $C$ is called a cone or nonnegative homogeneous if for every $x\in C$ and $\theta\geq0$,
 
+$$
+\theta x\in C.
+$$
+
+> A set $C$ is a convex cone if for any $x_1,x_2\in C$ and $\theta_1,\theta_2\geq0$,
+> $$ \theta_1x_1+\theta_2x_2\in C.$$
+
+Conic combination: 
+
+$$
+x=\theta_1x_1+\dots+\theta_kx_k\ ;\ \ \theta_i\geq0.
+$$
+
+> Cone contains every conic combination of its points.
+
+Conic hull:
+
+$$
+\\{\theta_1x_1+\dots+\theta_kx_k\mid x_i\in C,\ \theta_i\geq0,\ i=1,\dots,k\\}.
+$$
+
+> Conic hull is the smallest cone that contains $C$.
+
+
+### Hyperplane and halfspaces
+A hyperplane is a set of the form:
+
+$$
+\begin{align*}
+\\{x\mid a^\top x=b\\},
+\end{align*}\tag{2.1}
+$$
+
+where $a\in\mathbb{R}^n$, $a\neq0$, and $b\in\mathbb{R}$.
+
+> Let $(n_x,n_y,n_z)^\top$ be the normal vector, with inner product: 
+> 
+> $$
+> n_x(x-x_0)+n_y(y-y_0)+n_z(z-z_0)=0\implies a^\top x=n_xx_0+n_yy_0+n_zz_0=b.
+> $$
+
+A hyperplane divides $\mathbb{R}^n$ into two *halfspaces*:
+
+$$
+\{x\mid a^\top x\geq b\}\ ;\ \ \\{x\mid a^\top x\leq b\\},\ a\in\mathbb{R}^n,\ a\neq0,\ b\in\mathbb{R}.
+$$
+
+
+### Euclidean balls and ellipsoids
+A (Euclidean) ball in $\mathbb{R}^n$ has the form:
+
+$$
+B(x_c,r)=\\{x\mid\|x-x_c\|_2\leq r\\}=\\{x_c+ru\mid\|u\|_2\leq1\\},
+$$
+
+where $r>0$.
+
+> Euclidean ball is a convex set.
+
+An ellipsoid in $\mathbb{R}^n$ has the form:
+
+$$
+\begin{align*}
+\mathcal{E}=\\{x\mid(x-x_c)^TP^{-1}(x-x_c)\leq1\\}=\\{x_c+Au\mid\|u\|_2\leq1\\}.
+\end{align*}\tag{2.3, 2.4}
+$$
+
+> Ellipsoid is a convex set.
+
+
+### Polyhedra
+A polyhedra is defined as the solution set of a finite number of linear equalities and inequalities:
+
+$$
+\begin{align*}
+\mathcal{P}&=\\{x\mid \underbrace{a_j^Tx\leq b_j}_\text{inequality},j=1,\dots,m,\ \underbrace{c_j^Tx=d_j}_\text{equality},j=1,\dots,p\\}\\
+&=\\{x\mid Ax\preceq b,\ Cx=d\\},
+\end{align*}\tag{2.5, 2.6}
+$$
+
+i.e., the intersection of a finite number of halfspaces(inequality) and hyperplanes(equality).
+
+### The positive semidefinite cone
+
+| Definition                             | Notation                                                        |
+|----------------------------------------|-----------------------------------------------------------------|
+| symmetric matrix                       | $\mathcal{S}^n=\{X\in\mathbb{R}^{n\times n}\mid X=X^T\}$        |
+| symmetric positive semidefinite matrix | $\mathcal{S}^n_+=\{X\in\mathcal{S}^{n}\mid X\succeq0\}$         |
+| symmetric positive definite matrix     | $\mathcal{S}^n_{++}=\{X\in\mathbb{R}^{n\times n}\mid X\succ0\}$ |
+
+> $\mathcal{S}^n_+$ is a convex cone.

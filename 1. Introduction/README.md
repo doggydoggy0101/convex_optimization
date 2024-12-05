@@ -1,4 +1,4 @@
-## :book: Introduction
+# :book: Introduction
 
 An optimization problem can be written as follows:
 
