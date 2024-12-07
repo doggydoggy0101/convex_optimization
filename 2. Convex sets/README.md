@@ -381,4 +381,4 @@ Since dual cones of proper cones are also proper cones, they define generalized 
 **Dual characterization of minimal** Recall that $x\in S$ is minimal if $\forall y\in S,\ y\preceq_Kx$ only if $y=x$.
 - $\lambda\succ_{K^*}0$ and $x$ minimized $\lambda^\top z$ over $z\in S\implies x$ is minimal
   
-> Converse is not ture, e.g., minimal but not minimizer.
+> Converse is not true, e.g., minimal but not minimizer.
