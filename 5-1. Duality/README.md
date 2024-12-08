@@ -44,14 +44,14 @@ $$
 Suppose $x^*$ is the optimal solution, for any $\lambda\geq0$ and any $\nu$,
 
 $$
-\mathcal{L}(x^*,\lambda,\nu)=f_0(x^*)+\underbrace{\sum_{i=1}^m\lambda_if_i(x^*)}_{\leq0}+\underbrace{\sum_{i=1}^p\lambda_ih_i(x^*)}_{=0}\leq f_0(x^*).
+\mathcal{L}(x^\*,\lambda,\nu)=f_0(x^\*)+\underbrace{\sum_{i=1}^m\lambda_if_i(x^\*)}\_{\leq0}+\underbrace{\sum_{i=1}^p\lambda_ih_i(x^\*)}\_{=0}\leq f_0(x^\*).
 $$
 
 We have the relationship
 
 $$
 \begin{align*}
-g(\lambda,\nu)=\inf_{x\in\mathcal{D}}\mathcal{L}(x,\lambda,\nu)\leq \inf_{x\in\mathcal{D}}\mathcal{L}(x^*,\lambda,\nu)\leq f_0(x^*)\leq p^*.
+g(\lambda,\nu)=\inf_{x\in\mathcal{D}}\mathcal{L}(x,\lambda,\nu)\leq \inf_{x\in\mathcal{D}}\mathcal{L}(x^\*,\lambda,\nu)\leq f_0(x^\*)\leq p^\*.
 \end{align*}\tag{5.2}
 $$
 
@@ -59,7 +59,8 @@ $$
 
 $$
 \begin{align*}
-\min_{x}\ &x^3+2x^2-x+1\\\text{s.t.}\  &x^2\leq1\iff 0\leq x\leq 1 
+\min_{x}\ &x^3+2x^2-x+1\\\\ 
+\text{s.t.}\  &x^2\leq1\iff 0\leq x\leq 1 
 \end{align*}
 $$
 
@@ -67,7 +68,7 @@ The original problem is lower bounded by the optimal value.
 
 <div align="center">
    <img src="docs/lower_bound.png" width="400"/>
-   <p><b>Fig. 1 </b>Lower bound of objective function.</p>
+   <p><b>Fig. 1 </b>Objective function.</p>
 </div>
 
 Now consider the dual function
@@ -80,7 +81,7 @@ The dual function is upper bounded by the optimal value.
 
 <div align="center">
    <img src="docs/upper_bound.png" width="400"/>
-   <p><b>Fig. 2 </b>Upper bound of dual function.</p>
+   <p><b>Fig. 2 </b>Dual function.</p>
 </div>
 
 By the example, we have that the optimal value
@@ -114,14 +115,14 @@ $$
 \begin{align*}
 g(\lambda,\nu)&=\inf_x\left(f_0(x)+\lambda^\top(Ax-b)+\nu^\top(Cx-d)\right)\\
 &=-b^\top\lambda-d^\top\nu+\inf_x(f_0(x)+(A^\top\lambda+C^\top\nu)^\top x)\\
-&=-b^\top\lambda-d^\top\nu-f_0^*(-A^\top\lambda-C^\top\nu).
+&=-b^\top\lambda-d^\top\nu-f_0^\*(-A^\top\lambda-C^\top\nu).
 \end{align*}\tag{5.11}
 $$
 
 Thus we can express the domain of the dual function by the conjugate of objective,
 
 $$
-\mathbf{dom}\ g=\{(\lambda,\nu)\mid-A^\top\lambda-C^\top\nu\in\mathbf{dom}\ f_0^*\}.
+\mathbf{dom}\ g=\\{(\lambda,\nu)\mid-A^\top\lambda-C^\top\nu\in\mathbf{dom}\ f_0^\*\\}.
 $$
 
 ## Lagrange dual problem
