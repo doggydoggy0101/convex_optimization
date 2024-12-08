@@ -16,7 +16,7 @@ Notes on Convex Optimization by Boyd [[1]](#BV04).
 ## :gear: Setup
 Install [Python](https://www.python.org/downloads/).
 ```shell
-pip install
+pip install cvxpy numpy matplotlib
 ```
 
 ## :scroll: Contents
@@ -36,7 +36,8 @@ pip install
   
 ### :dna: Duality
 
-- [:book: Duality](5-1.%20Duality/)
+- [:book: Duality](5-1.%20Duality/) (Chapter 5.1 - 5.3)
+- [:book: Saddle-point](5-2.%20Saddle-point/) (Chapter 5.4)
 
 
 ## :books: Reference
