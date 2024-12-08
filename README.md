@@ -36,6 +36,8 @@ pip install
   
 ### :dna: Duality
 
+- [:book: Duality](5-1.%20Duality/)
+
 
 ## :books: Reference
 <a id="BV04">[1]</a> 
