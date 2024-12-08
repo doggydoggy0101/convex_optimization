@@ -9,8 +9,8 @@
 In this section, we give another interpretation of Lagrange duality. Consider an optimization problem with not equality constraints (the results can be easily extended). Consider $\sup_\lambda\mathcal{L}(x,\lambda)$, we choose $\lambda=0$ if $x$ is feasible and choose $\lambda_i\to\infty$ if $x$ is not feasible such that $f_i(x)>0$. Thereby, we have
 
 $$
-\sup_{\lambda\succeq0}\mathcal{L}(x,\lambda)=\sup_{\lambda\succeq0}\left(f_0(x)+\sum_{i=1}^m\lambda_if_i(x)\right)=\begin{cases}f_0(x)&f_i(x)\leq0,\ i=1,\dots,m, \\ \infty&\text{otherwise}.\end{cases}
-
+\sup_{\lambda\succeq0}\mathcal{L}(x,\lambda)=\sup_{\lambda\succeq0}\left(f_0(x)+\sum_{i=1}^m\lambda_if_i(x)\right)=
+\begin{cases}f_0(x)&f_i(x)\leq0,\ i=1,\dots,m, \\\\ \infty&\text{otherwise}.\end{cases}
 $$
 
 We can express the optimal value of the primal problem as 
@@ -61,7 +61,6 @@ Since $\sup_z\inf_wf(w,z)$ is a lower bound of $\sup_zf(w,z)$ and infimum is the
 
 $$
 \sup_{z\in Z}\inf_{w\in W}f(w,z)\leq\inf_{w\in W}\sup_{z\in Z}f(w,z).
-
 $$
 
 ### Saddle-point
