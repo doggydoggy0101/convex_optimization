@@ -6,6 +6,8 @@
     - [Lower bounds on optimal value](#lower-bounds-on-optimal-value)
     - [Conjugate functions](#conjugate-functions)
   - [Lagrange dual problem](#lagrange-dual-problem)
+    - [Weak duality and Strong duality](#weak-duality-and-strong-duality)
+    - [Slater's condition](#slaters-condition)
 
 
 ## Lagrange dual function
@@ -67,7 +69,7 @@ $$
 The original problem is lower bounded by the optimal value.
 
 <div align="center">
-   <img src="docs/lower_bound.png" width="400"/>
+   <img src="docs/lower_bound.png" width="480"/>
    <p><b>Fig. 1 </b>Objective function.</p>
 </div>
 
@@ -80,7 +82,7 @@ $$
 The dual function is upper bounded by the optimal value.
 
 <div align="center">
-   <img src="docs/upper_bound.png" width="400"/>
+   <img src="docs/upper_bound.png" width="480"/>
    <p><b>Fig. 2 </b>Dual function.</p>
 </div>
 
@@ -135,3 +137,30 @@ $$
 \text{s.t.}\ &\lambda\succeq0.
 \end{align*}\tag{5.16}
 $$
+
+The dual problem is always convex whether the primal problem is convex or not.
+
+### Weak duality and Strong duality
+
+Denote $d^\*$ as the optimal value of the dual problem. Since the optimal value of the primal problem $p^\*$ is an upper bound of the dual function, we have the weak duality:
+
+$$
+\begin{align*}
+d^\*\leq p^\*.
+\end{align*}\tag{5.23}
+$$
+
+We define $p^\*-d^\*$ as the duality gap. Now if
+
+$$
+\begin{align*}
+d^\*=p^\*,
+\end{align*}\tag{5.24}
+$$
+
+we say that strong duality holds.
+
+### Slater's condition
+Slater's condition is a sufficient condition for strong duality to hold **for convex problems**. Consider Problem $(5.1)$ where all functions are convex, we say the problem satisfies Slater's condition if there exists an $x\in\mathbf{relint}\ \mathcal{D}$ such that $f_i(x)<0,\ i=1,\dots,m$ and $h_i(x)=0,\ i=1,\dots,p$, i.e., there is a point in the relative interior that is strictly feasible.
+
+<!-- TODO: proof (sec 5.3.2) -->
