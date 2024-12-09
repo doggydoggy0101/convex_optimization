@@ -44,6 +44,10 @@ pip install cvxpy numpy matplotlib
 <a id="BV04">[1]</a> 
 Boyd, S., & Vandenberghe, L. (2004). Convex optimization. Cambridge university press. ([preprint](https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf))
 
-[2] Boyd, S. Stanford CVX101: Convex Optimization. ([homework](https://github.com/NoamGit/CVX101-HW-with-python))
+[2] Bazaraa, M. S., Sherali, H. D., & Shetty, C. M. (2006). Nonlinear programming: theory and algorithms. John wiley & sons. ([preprint](http://213.55.90.4/admin/home/Dmu%20Academic%20Resource/Natural%20And%20Computational%20Science%20College/Mathematics/4th%20year/bazara.pdf))
 
-[3] Zhang, S. UMN IE 8521: Optimization.
+[3] Bertsekas, D. P. (1997). Nonlinear programming. Journal of the Operational Research Society, 48(3), 334-334.
+
+[4] Boyd, S. Stanford CVX101: Convex Optimization. ([homework](https://github.com/NoamGit/CVX101-HW-with-python))
+
+[5] Zhang, S. UMN IE 8521: Optimization.
