@@ -38,6 +38,7 @@ pip install cvxpy numpy matplotlib
 
 - [:book: Duality](5-1.%20Duality/) (Chapter 5.1 - 5.3)
 - [:book: Saddle-point](5-2.%20Saddle-point/) (Chapter 5.4)
+- [:book: Optimal conditions](5-3.%20Optimal%20conditions/) (Chapter 5.5)
 
 
 ## :books: Reference
