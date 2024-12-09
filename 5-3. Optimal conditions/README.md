@@ -56,7 +56,7 @@ Another result is that $\lambda_i^\*$ is zero if the $i$-th inequality constrain
 
 ## Fritz-John conditions
 
-In Boyd's Convex Optimization, he assumes that $f_i,h_i$ are all differentiable and Slater's condition holds to derive the Karush-Kuhn-Tucker (KKT) conditions. However, there are other optimal conditions that does not require such strong assumptions. Therefore, we start by the Fritz-John (FJ) conditions.
+In Boyd's *Convex Optimization*, he assumes that $f_i,h_i$ are all differentiable and Slater's condition holds to derive the Karush-Kuhn-Tucker (KKT) conditions. However, there are other optimal conditions that does not require such strong assumptions. Therefore, we start by the Fritz-John (FJ) conditions.
 
 ### Fritz-John necessary conditions with binding constraints
 
@@ -77,9 +77,9 @@ Let $x$ be a feasible solution and $I=\\{i\mid f_i(x)=0\\}$ be the set of bindin
 **assumptions**
 - objective, inequality constraints, equality constraints are differentiable
 
-Let $x$ be a feasible solution. Suppose that $f_0,\ f_i,i=1,\dots,m,\ h_i,i=1,\dots,p$ are differentiable at $x$. If $x$ is a local solution, then there exists $\lambda_0,\ \lambda_i,i\in I,\ \nu_i,i=1,\dots,p$ (Lagrange multipliers) such that
+Let $x$ be a feasible solution. Suppose that $f_0,\ f_i,i=1,\dots,m,\ h_i,i=1,\dots,p$ are differentiable at $x$. If $x$ is a local solution, then there exists $\lambda_0,\ \lambda_i,i=1,\dots,m,\ \nu_i,i=1,\dots,p$ (Lagrange multipliers) such that
 
-- first-order condition: $\lambda_0\nabla f_0(x)+\sum_{i\in I}\lambda_i\nabla f_i(x)+\sum_{i=1}^p\nu_i\nabla h_i(x)=0$
+- first-order condition: $\lambda_0\nabla f_0(x)+\sum_{i=1}^m\lambda_i\nabla f_i(x)+\sum_{i=1}^p\nu_i\nabla h_i(x)=0$
 - complementary slackness: $\lambda_if_i(x)=0,\ i=1,\dots,m$
 - primal feasibility: $f_i(x)\leq0,\ i=1,\dots,m$
 - dual feasibility: $\lambda_0,\lambda_i\geq0,\ i\in I$
@@ -120,9 +120,9 @@ Let $x$ be a feasible solution and $I=\\{i\mid f_i(x)=0\\}$ be the set of bindin
 - objective, inequality constraints, equality constraints are differentiable
 - constraint qualification
 
-Let $x$ be a feasible solution. Suppose that $f_0,\ f_i,i=1,\dots,m,\ h_i,i=1,\dots,p$ are differentiable at $x$. Suppose some constraint qualification holds, e.g., $\nabla f_i,i\in I$ and $\nabla h_i,i=1,\dots,p$ are linear independent. If $x$ is a local solution, then there exists $\lambda_0,\ \lambda_i,i\in I,\ \nu_i,i=1,\dots,p$ (Lagrange multipliers) such that
+Let $x$ be a feasible solution. Suppose that $f_0,\ f_i,i=1,\dots,m,\ h_i,i=1,\dots,p$ are differentiable at $x$. Suppose some constraint qualification holds, e.g., $\nabla f_i,i\in I$ and $\nabla h_i,i=1,\dots,p$ are linear independent. If $x$ is a local solution, then there exists $\lambda_0,\ \lambda_i,i=1,\dots,m,\ \nu_i,i=1,\dots,p$ (Lagrange multipliers) such that
 
-- first-order condition: $\nabla f_0(x)+\sum_{i\in I}\lambda_i\nabla f_i(x)+\sum_{i=1}^p\nu_i\nabla h_i(x)=0$
+- first-order condition: $\nabla f_0(x)+\sum_{i=1}^m\lambda_i\nabla f_i(x)+\sum_{i=1}^p\nu_i\nabla h_i(x)=0$
 - complementary slackness: $\lambda_if_i(x)=0,\ i=1,\dots,m$
 - primal feasibility: $f_i(x)\leq0,\ i=1,\dots,m$
 - dual feasibility: $\lambda_0,\lambda_i\geq0,\ i\in I$
