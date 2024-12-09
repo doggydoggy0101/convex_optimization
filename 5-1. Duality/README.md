@@ -22,7 +22,7 @@ $$
 \end{align*}\tag{5.1}
 $$
 
-with domain $\mathcal{D}=\bigcap_{i=0}^m\mathbf{dom}\ f_i\ \cap\ \bigcap_{i=1}^p\mathbf{dom}\ h_i$ is nonempty, and denote the optimal value by $p^*$. Note the Problem $(5.1)$ is **not necessarily convex**. The idea of Lagrangian duality is to leverage the constraints in Problem $(5.1)$ into the objective function with some weights. We define the Lagrangian $\mathcal{L}:\mathbb{R}^n\times\mathbb{R}^m\times\mathbb{R}^n\to\mathbb{R}$ by
+with domain $\mathcal{D}=\bigcap_{i=0}^m\mathbf{dom}\ f_i\ \cap\ \bigcap_{i=1}^p\mathbf{dom}\ h_i$ is nonempty, and denote the optimal value by $p^*$. Note the Problem $(5.1)$ is **not necessarily convex**. The idea of Lagrangian duality is to leverage the constraints in Problem $(5.1)$ into the objective function with some weights. We define the Lagrangian $\mathcal{L}:\mathbb{R}^n\times\mathbb{R}^m\times\mathbb{R}^p\to\mathbb{R}$ by
 
 $$
 \mathcal{L}(x,\lambda,\nu)=f_0(x)+\sum_{i=1}^m\lambda_if_i(x)+\sum_{i=1}^p\lambda_ih_i(x),
@@ -32,10 +32,10 @@ where $\lambda$ and $\nu$ are called the Lagrange multipliers or dual variables.
 
 **Dual function**
 
-We define the (Lagrange) dual function $g:\mathbb{R}^n\times\mathbb{R}^m\times\mathbb{R}^n\to\mathbb{R}$ by
+We define the (Lagrange) dual function $g:\mathbb{R}^m\times\mathbb{R}^p\to\mathbb{R}$ by
 
 $$
-g(\lambda,\nu)=\inf_{x\in\mathcal{D}}\mathcal{L}(x,\lambda,\nu)=\inf_{x\in\mathcal{D}}\left(f_0(x)+\sum_{i=1}^m\lambda_if_i(x)+\sum_{i=1}^p\lambda_ih_i(x)\right).
+g(\lambda,\nu)=\inf_{x\in\mathcal{D}}\mathcal{L}(x,\lambda,\nu)=\inf_{x\in\mathcal{D}}\left(f_0(x)+\sum_{i=1}^m\lambda_if_i(x)+\sum_{i=1}^p\mu_ih_i(x)\right).
 $$
 
 > The dual function is the pointwise infimum of a family of aﬃne functions of $(\lambda,\nu)$, it is always concave even if Problem $(5.1)$ is not convex.
@@ -53,7 +53,7 @@ We have the relationship
 
 $$
 \begin{align*}
-g(\lambda,\nu)=\inf_{x\in\mathcal{D}}\mathcal{L}(x,\lambda,\nu)\leq \inf_{x\in\mathcal{D}}\mathcal{L}(x^\*,\lambda,\nu)\leq f_0(x^\*)\leq p^\*.
+g(\lambda,\nu)=\inf_{x\in\mathcal{D}}\mathcal{L}(x,\lambda,\nu)\leq \inf_{x\in\mathcal{D}}\mathcal{L}(x^\*,\lambda,\nu)\leq f_0(x^\*)=p^\*.
 \end{align*}\tag{5.2}
 $$
 
